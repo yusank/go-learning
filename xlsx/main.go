@@ -3,12 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"os"
 	"reflect"
 	"strings"
 
 	"github.com/tealeg/xlsx"
-	"github.com/xuri/excelize"
 )
 
 type yusan struct {
@@ -20,26 +18,28 @@ type yusan struct {
 }
 
 func main() {
-	xlsx := excelize.NewFile()
+	// xlsx := excelize.NewFile()
 
-	index := xlsx.NewSheet("newsheet")
+	// index := xlsx.NewSheet("newsheet")
 
-	xlsx.SetCellValue("newsheet", "a1", "world")
-	xlsx.SetCellValue("newsheet", "A2", "hello")
-	xlsx.SetCellValue("sheet1", "C1", "hahaha")
+	// xlsx.SetCellValue("newsheet", "a1", "world")
+	// xlsx.SetCellValue("newsheet", "A2", "hello")
+	// xlsx.SetCellValue("sheet1", "C1", "hahaha")
 
-	xlsx.SetActiveSheet(index)
+	// xlsx.SetActiveSheet(index)
 
-	err := xlsx.SaveAs("new.xlsx")
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+	// err := xlsx.SaveAs("new.xlsx")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	os.Exit(1)
+	// }
 
-	fmt.Println("complate.")
-	generateXLSX()
+	// fmt.Println("complate.")
+	// generateXLSX()
 
-	readXLSX()
+	// readXLSX()
+
+	duplicateXlsx()
 }
 
 func generateXLSX() {
@@ -106,4 +106,47 @@ func readXLSX() {
 		}
 	}
 	return
+}
+
+func duplicateXlsx() error {
+	xlFile, err := xlsx.OpenFile("push_stat.xlsx")
+	if err != nil {
+		return err
+	}
+
+	var (
+		dupMap   map[string]*xlsx.Row
+		dupSlice []*xlsx.Row
+	)
+	dupMap = make(map[string]*xlsx.Row)
+
+	for _, v := range xlFile.Sheet {
+		for k, vv := range v.Rows {
+			if k == 0 {
+				dupSlice = append(dupSlice, vv)
+			}
+			if k != 0 && len(vv.Cells) > 2 {
+				if _, found := dupMap[vv.Cells[2].Value]; !found {
+					dupMap[vv.Cells[2].Value] = vv
+					dupSlice = append(dupSlice, vv)
+				}
+			}
+		}
+	}
+
+	newFile := xlsx.NewFile()
+	newSheet, err := newFile.AddSheet("default")
+	if err != nil {
+		return err
+	}
+
+	for _, v := range dupSlice {
+		rowss := newSheet.AddRow()
+		for _, vv := range v.Cells {
+			cells := rowss.AddCell()
+			cells.SetValue(vv.Value)
+		}
+	}
+
+	return newFile.Save("fix_stat.xlsx")
 }
