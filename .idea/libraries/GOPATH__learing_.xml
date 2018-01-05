@@ -1,0 +1,69 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;learing&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../yyk" />
+      <root url="file://$USER_HOME$/go/src/ants-go" />
+      <root url="file://$USER_HOME$/go/src/yacc" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/s8e" />
+      <root url="file://$USER_HOME$/go/src/Mephisto" />
+      <root url="file://$USER_HOME$/go/src/qiancunApiGo" />
+      <root url="file://$USER_HOME$/go/src/golang.org" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
+      <root url="file://$USER_HOME$/go/src/gistar-server" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$USER_HOME$/go/src/k8s.io" />
+      <root url="file://$USER_HOME$/go/src/pholcus" />
+      <root url="file://$USER_HOME$/go/src/negroni" />
+      <root url="file://$PROJECT_DIR$/../timer" />
+      <root url="file://$USER_HOME$/go/src/hypercube" />
+      <root url="file://$USER_HOME$/go/src/metalApi" />
+      <root url="file://$USER_HOME$/go/src/goim" />
+      <root url="file://$USER_HOME$/go/src/wechat.v2" />
+      <root url="file://$USER_HOME$/go/src/gosnippet" />
+      <root url="file://$PROJECT_DIR$/../GitHook" />
+      <root url="file://$PROJECT_DIR$/../chat" />
+      <root url="file://$PROJECT_DIR$/../creck" />
+      <root url="file://$PROJECT_DIR$/../giit" />
+      <root url="file://$PROJECT_DIR$/../Mouse" />
+      <root url="file://$USER_HOME$/go/src/Andariel" />
+      <root url="file://$USER_HOME$/go/src/OfficeSuiteServer" />
+      <root url="file://$USER_HOME$/go/src/workflow" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../yyk" />
+      <root url="file://$USER_HOME$/go/src/ants-go" />
+      <root url="file://$USER_HOME$/go/src/yacc" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/s8e" />
+      <root url="file://$USER_HOME$/go/src/Mephisto" />
+      <root url="file://$USER_HOME$/go/src/qiancunApiGo" />
+      <root url="file://$USER_HOME$/go/src/golang.org" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
+      <root url="file://$USER_HOME$/go/src/gistar-server" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$USER_HOME$/go/src/k8s.io" />
+      <root url="file://$USER_HOME$/go/src/pholcus" />
+      <root url="file://$USER_HOME$/go/src/negroni" />
+      <root url="file://$PROJECT_DIR$/../timer" />
+      <root url="file://$USER_HOME$/go/src/hypercube" />
+      <root url="file://$USER_HOME$/go/src/metalApi" />
+      <root url="file://$USER_HOME$/go/src/goim" />
+      <root url="file://$USER_HOME$/go/src/wechat.v2" />
+      <root url="file://$USER_HOME$/go/src/gosnippet" />
+      <root url="file://$PROJECT_DIR$/../GitHook" />
+      <root url="file://$PROJECT_DIR$/../chat" />
+      <root url="file://$PROJECT_DIR$/../creck" />
+      <root url="file://$PROJECT_DIR$/../giit" />
+      <root url="file://$PROJECT_DIR$/../Mouse" />
+      <root url="file://$USER_HOME$/go/src/Andariel" />
+      <root url="file://$USER_HOME$/go/src/OfficeSuiteServer" />
+      <root url="file://$USER_HOME$/go/src/workflow" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

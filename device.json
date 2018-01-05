@@ -1,0 +1,23 @@
+{
+        "upload": true,
+        "uniqueID": "adsa",
+        "instanceID":"aa",
+        "deviceId": "ss",
+        "manufacturer": "dd",
+        "model": "sda",
+        "brand": "awe",
+        "systemName": "asd",
+        "systemVersion": "dasda",
+        "bundleID": "adsaw",
+        "buildNumber": "awea",
+        "version": "asdasd",
+        "readableVersion": "xzx",
+        "deviceName": "qqqq",
+        "userAgent": "tttt",
+        "locale": "ggg",
+        "deviceCountry": "xxxcc",
+        "timezone": "adsasd",
+        "isEmulator": false,
+        "isTablet": false,
+        "isPinOrFingerprintSet": true
+      }
