@@ -15,7 +15,7 @@ const (
 func exampleDate() {
 	t := time.Now()
 	fmt.Printf("now is : %s\n", t)
-	fmt.Println(t.AddDate(0,4,0))
+	fmt.Println(t.AddDate(0, 4, 0))
 }
 
 // 把时间格式转换成给定的格式
@@ -30,7 +30,7 @@ func exampleTimeFormat() {
 func exmapleParse() {
 	t, _ := time.Parse(format1, "2017-Jun-02")
 	fmt.Println(t)
-	newtime := t.AddDate(0,0,40)
+	newtime := t.AddDate(0, 0, 40)
 	_, mon, _ := newtime.Date()
 	fmt.Println(mon)
 
@@ -45,4 +45,7 @@ func main() {
 	exampleDate()
 	exampleTimeFormat()
 	exmapleParse()
+	now := time.Now()
+	start := time.Date(now.Year(), now.Month(), now.Day()-31, 0, 0, 0, 0, time.Local)
+	fmt.Println(start)
 }
