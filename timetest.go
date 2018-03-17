@@ -41,6 +41,19 @@ func exmapleParse() {
 	fmt.Println(">>", n)
 }
 
+func NextMonthStr() string {
+	t := time.Now()
+	year, month, _ := t.Date()
+	hour, min, sec := t.Clock()
+	years := 0
+	if month == time.December {
+		years = 1
+	}
+	nt := time.Date(year+years, month+time.Month(1), 1, hour, min, sec, 0, t.Location())
+
+	return nt.Format("200601")
+}
+
 func main() {
 	exampleDate()
 	exampleTimeFormat()
@@ -48,4 +61,8 @@ func main() {
 	now := time.Now()
 	start := time.Date(now.Year(), now.Month(), now.Day()-31, 0, 0, 0, 0, time.Local)
 	fmt.Println(start)
+	ttt := time.Now().AddDate(0, 1, 0)
+	fmt.Println(ttt)
+	fmt.Println(time.Now())
+	fmt.Println(NextMonthStr())
 }
