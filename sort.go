@@ -20,17 +20,30 @@ func main() {
 		g := new(Games)
 		g.Id = i
 		g.GameId = string(byte(77 - i))
-		g.Status = rand.Intn(10)
+		g.Status = rand.Intn(5)
 
 		gameSlice = append(gameSlice, g)
 	}
 
+	//sort.Slice(gameSlice, func(i, j int) bool {
+	//	return gameSlice[i].Status < gameSlice[j].Status
+	//})
+
 	sort.Slice(gameSlice, func(i, j int) bool {
 		fmt.Println(gameSlice[i].Status, gameSlice[j].Status)
-		if gameSlice[i].Status > gameSlice[j].Status && gameSlice[i].Status == 9 {
-			return gameSlice[i].Status < gameSlice[j].Status
+		is, js := gameSlice[i].Status, gameSlice[j].Status
+		if is == 4 {
+			is = 0
 		}
-		return gameSlice[i].Status > gameSlice[j].Status
+		if js == 4 {
+			js = 0
+		}
+
+		return is > js
+		//if gameSlice[i].Status > gameSlice[j].Status && gameSlice[i].Status == 4 {
+		//	return false
+		//}
+		//return gameSlice[i].Status > gameSlice[j].Status
 	})
 
 	for _, v := range gameSlice {
