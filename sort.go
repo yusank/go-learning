@@ -14,6 +14,7 @@ type Games struct {
 }
 
 func main() {
+	foo()
 	var gameSlice []*Games
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < 10; i++ {
@@ -48,5 +49,35 @@ func main() {
 
 	for _, v := range gameSlice {
 		fmt.Printf("%+v \n", *v)
+	}
+}
+
+type pair struct {
+	key   string
+	value string
+}
+
+func foo() {
+	var pairs []pair
+
+	a := pair{
+		key: "aaa",
+	}
+
+	pairs = append(pairs, a)
+
+	for i := 0; i < 10; i++ {
+		var p pair
+		p.key = string(byte(67 + i))
+		p.value = fmt.Sprint(i)
+
+		pairs = append(pairs, p)
+	}
+
+	sort.Slice(pairs, func(i, j int) bool {
+		return pairs[i].value > pairs[j].value
+	})
+	for _, v := range pairs {
+		fmt.Printf("%+v \n", v)
 	}
 }
