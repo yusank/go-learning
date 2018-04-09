@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
-//	"strconv"
 	"time"
 	//"unicode"
 )
 
-const(
-	 abc = "2017-06-12T12:12:12+08:00"
-	 aaa = "2017-06-11T12:13:14+08:00"
+const (
+	abc = "2017-06-12T12:12:12+08:00"
+	aaa = "2017-06-11T12:13:14+08:00"
 )
+
 func main() {
 	/*slice := strings.Split(abc, "-")
 	j := strings.Join(slice, "")
@@ -23,14 +24,14 @@ func main() {
 		}
 	j := strings.Join(slice[:2], "T")
 	fmt.Println(j)
-*/
-	T()
+	*/
+	identify()
 }
 
 func T() {
 	t := time.Now().UTC()
-	fmt.Print(t,"---------")
-	tt , err := time.Parse("2006-01-02T15:04:05Z07:00", abc)
+	fmt.Print(t, "---------")
+	tt, err := time.Parse("2006-01-02T15:04:05Z07:00", abc)
 	fmt.Print(tt, "=============")
 	if err != nil {
 		fmt.Print(err)
@@ -52,6 +53,21 @@ func T() {
 	//fmt.Print(t)
 	if strings.Contains("hello", "") {
 		fmt.Println("success")
-		}
+	}
 
+}
+
+func identify() {
+	id := "130203198002103616"
+	age := 0
+	brith := id[6:12]
+	bInt, err := strconv.Atoi(brith)
+	fmt.Println(bInt)
+	if err != nil {
+		fmt.Println("age err:", err)
+	} else {
+		age = (201804 - bInt) / 100
+	}
+
+	fmt.Println(age)
 }

@@ -69,7 +69,7 @@ func foo() {
 	for i := 0; i < 10; i++ {
 		var p pair
 		p.key = string(byte(67 + i))
-		p.value = fmt.Sprint(i)
+		p.value = fmt.Sprint(i + 123)
 
 		pairs = append(pairs, p)
 	}
